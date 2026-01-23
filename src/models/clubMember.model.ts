@@ -1,11 +1,13 @@
-import {Schema, model} from "mongoose"
+import { Schema, model } from "mongoose"
 import { IClubMember } from "@interfaces/clubMember.interface"
 import { IClubMemberAchievement } from "srcinterfaces/clubMemberAchievement.interface"
 
 const ClubMemberAchievementSchema = new Schema<IClubMemberAchievement>({
-    type: { type: String, 
-        enum: ["played" , "goals" , "assists" , "redcards" , "passes" , "motm"], 
-        required: true },
+    type: {
+        type: String,
+        enum: ["played", "goals", "assists", "redcards", "passes", "motm"],
+        required: true
+    },
     reached: { type: Number, required: true }
 });
 
@@ -18,78 +20,78 @@ const clubMemberSchema = new Schema<IClubMember>(
         },
         proName: {
             type: String,
-            required: true
+            required: false
         },
-        proPos:{
+        proPos: {
+            type: Number,
+            required: false
+        },
+        proHeight: {
+            type: Number,
+            required: false
+        },
+        proOverall: {
+            type: Number,
+            required: false
+        },
+        manOfTheMatch: {
             type: Number,
             required: true
         },
-        proHeight:{
-            type: Number,
-            required: true
-        },
-        proOverall:{
-            type: Number,
-            required: true
-        },
-        manOfTheMatch:{
-            type: Number,
-            required: true
-        },
-        favoritePosition:{
+        favoritePosition: {
             type: String,
-            enum: ["midfielder" , "forward" , "defender" , "goalkeeper"],
-            required: true
+            enum: ["midfielder", "forward", "defender", "goalkeeper"],
+            required: false
         },
-        gamesPlayed:{
+        gamesPlayed: {
             type: Number,
             required: true
         },
-        winRate:{
+        winRate: {
             type: Number,
             required: true
         },
-        goals:{
+        goals: {
             type: Number,
             required: true
         },
-        assists:{
+        assists: {
             type: Number,
             required: true
         },
-        cleanSheetsDef:{
+        cleanSheetsDef: {
             type: Number,
             required: true
         },
-        cleanSheetsGK:{
+        cleanSheetsGK: {
             type: Number,
             required: true
         },
-        shots:{
+        shots: {
             type: Number,
             required: true
         },
-        passesMade:{
+        passesMade: {
             type: Number,
             required: true
         },
-        passesSuccess:{
+        passesSuccess: {
             type: Number,
             required: true
         },
-        ratingAve:{
+        ratingAve: {
             type: Number,
             required: true
         },
-        tacklesMade:{
+        tacklesMade: {
             type: Number,
             required: true
         },
-        tacklesSuccess:{
+        tacklesSuccess: {
             type: Number,
             required: true
         },
-        redCards:{
+        redCards: {
             type: Number,
             required: true
         },
